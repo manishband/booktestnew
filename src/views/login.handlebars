@@ -1,0 +1,26 @@
+<style>
+    body{background-color: #e6e6e6;}
+</style>
+<div class="login-page">
+  <div class="form">
+    {{#if errorLogin}}
+        <div class="alert alert-danger alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          {{ errorLogin }}
+        </div>
+      {{/if}}
+      {{#if successLogin}}
+        <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>Success!</strong> {{successLogin}}
+        </div>
+      {{/if}}
+    <form class="login-form" action="/user/login" method="POST">
+      <input type="ermail" name="email" placeholder="email"/>
+      <input type="password" name="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message">Not registered? <a href="/user/register">Create an account</a></p>
+    </form>
+  </div>
+</div>

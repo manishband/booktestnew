@@ -1,0 +1,71 @@
+<div class="container">
+    <h1>Add Book in list</h1>
+  	<hr>
+	<div class="row">
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <!--<div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div> -->
+        {{#if errorLogin}}
+        <div class="alert alert-danger alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          {{ errorLogin }}
+        </div>
+      {{/if}}
+        <h3>add Books info</h3>
+        <form class="form-horizontal" method="POST" role="form" id="addBooks" action="/book/addBook">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Book Name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" name="name" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Publisher Name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" name="publisher" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Price:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" name="price" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Genre:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="" name="genere">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Select Author:</label>
+            <div class="col-md-8">
+              <select class="form-control" name="author">
+                <option value="">Select Author</option>
+                {{#each author}}
+                {{this.firstname}}
+                  {{#if this.value}}
+                      <option value="{{this.value}}">{{this.firstname}} {{this.lastname}}</option>
+                  {{/if}}
+                {{/each}}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="submit" id="addBook" class="btn btn-primary" value="Add Book">
+              <span></span>
+              <input type="reset" class="btn btn-default" value="Cancel">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>
