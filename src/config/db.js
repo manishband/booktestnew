@@ -21,7 +21,7 @@ var connectToDb = async function connectToDb() {
     var dbPort = _config2.default.dbPort;
     var dbName = _config2.default.dbName;
     try {
-        await _mongoose2.default.connect('mongodb://' + dbHost + ':' + dbPort + '/' + dbName, { useNewUrlParser: true });
+        await _mongoose2.default.connect('mongodb://manishband:Summer@2018@ds211592.mlab.com:11592/booksonline', { useNewUrlParser: true });
     } catch (err) {
         Error('Could not connect to MongoDB');
     }
