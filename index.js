@@ -85,6 +85,6 @@ app.get('/', function (req, res) {
 app.use('/user', _user2.default);
 app.use('/book', _books2.default);
 
-app.listen(port, function () {
+app.listen(process.env.PORT || 5000, function () {
     // console.log('server started - ', port);
 });
